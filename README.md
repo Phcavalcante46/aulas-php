@@ -6,9 +6,14 @@ Neste projeto, estamos estudando a **linguagem PHP**
 
 - Sintaxe geral
 - Variáveis e constantes
+
+```php
+$aluno = "Fulano";
+const ESCOLA = "Senac";
+````
 - Arrays e objetos genéricos
 
-## Recursor para estudar
+## Recursos para estudar
 
 1. Condicionais
 2. Loops
