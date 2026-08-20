@@ -11,8 +11,38 @@
     <div class="container">
         <h1>Recebimento e processamento de dados</h1>
         <hr>
-        
-    </div>
+<?php 
+
+//Capturando os dados de cada campo
+$nome = $_POST["nome"];  
+$email = $_POST["email"];
+$idade = $_POST["idade"];
+$mensagem = $_POST["mensagem"];
+//  Opertador ?? coalescencia nula Caso nenhum interesse seja selecionado a variavel guardara um array vazio
+$interesses = $_POST["interesses"] ?? [];
+
+// Caso nenhuma opcao seja selecionada o valor "nao" fica como padrão
+$informativos = $_POST["informativos"] ?? "nao";
+?>
+
+<h2>Dados recebidos</h2>
+</div>
+<p>Nome: <?= $nome ?></p>
+<p>E-mail: <?= $email ?></p>
+<p>Idade:<?= $idade ?></p>
+<p>Mensagem <?= $mensagem ?></p>
+
+<?php if (!empty($interesses)): ?>
+<p>Interesses: <?= implode(", ", $interesses) ?></p>
+<?php endif; ?>
+
+<p>Informativos:
+    <?= $informativos === 'sim' ? "Sim" : "Não" ?>
+</p>
+
+
+<p>Interesses: <?= implode(", ", $interesses)?></p>
+<p>Informativos <?= $informativos ?></p>
 
 
 
